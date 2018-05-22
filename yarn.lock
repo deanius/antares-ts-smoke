@@ -10,8 +10,9 @@ ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
 
-antares-protocol@./../antares-ts:
-  version "0.5.0-pre-alpha"
+antares-protocol@antares-protocol:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/antares-protocol/-/antares-protocol-1.2.0.tgz#389b70e9e4d2460d5dc2c28fef06902a906e344c"
 
 babel-code-frame@^6.26.0:
   version "6.26.0"
@@ -618,6 +619,10 @@ number-is-nan@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
 
+one-time@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/one-time/-/one-time-0.0.4.tgz#f8cdf77884826fe4dff93e3a9cc37b1e4480742e"
+
 os-homedir@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/os-homedir/-/os-homedir-1.0.2.tgz#ffbc4988336e0e833de0c168c7ef152121aa7fb3"
@@ -673,6 +678,12 @@ repeating@^2.0.0:
   resolved "https://registry.yarnpkg.com/repeating/-/repeating-2.0.1.tgz#5214c53a926d3552707527fbab415dbc08d06dda"
   dependencies:
     is-finite "^1.0.0"
+
+say@^0.14.0:
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/say/-/say-0.14.0.tgz#742e707597d7359022e72851074f8598abcfd5c8"
+  dependencies:
+    one-time "0.0.4"
 
 semver@^5.3.0:
   version "5.5.0"

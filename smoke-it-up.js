@@ -1,11 +1,18 @@
-module.exports = (antares) => {
-    const a = {
-        type: 'Persist.toDB'
-    }
+let loadedOnce;
 
-    antares.subscribeRenderer(({action}) => {
-        console.log(`Yay, could render ${action.type}`)        
-    })
-    antares.process(a)
-        .then(s => console.log(`Yay done processing ${a.type} ${s}` + '\n'))
-}
+module.exports = antares => {
+  if (!loadedOnce) {
+    antares.subscribeRenderer(({ action }) => {
+      console.log(`Yay, could render ${action.type}`);
+    });
+
+    loadedOnce = true;
+  }
+
+  const action = {
+    type: 'Some.type'
+  };
+  antares
+    .process(action)
+    .then(({ action }) => console.log(`Yay done processing ${action.type}` + '\n'));
+};
