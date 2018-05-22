@@ -1,4 +1,4 @@
-const AntaresProtocol = require('antares-protocol')
+const { AntaresProtocol } = require('antares-protocol')
 
 const antares = new AntaresProtocol
 
