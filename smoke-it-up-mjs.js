@@ -1,4 +1,4 @@
-import {default as AntaresProtocol, Action} from 'antares-protocol'
+import { AntaresProtocol, Action } from 'antares-protocol'
 
 const antares = new AntaresProtocol
 
