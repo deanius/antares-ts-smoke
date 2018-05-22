@@ -1,18 +1,23 @@
-let loadedOnce;
+const faker = require("faker")
 
 module.exports = antares => {
-  if (!loadedOnce) {
-    antares.subscribeRenderer(({ action }) => {
-      console.log(`Yay, could render ${action.type}`);
-    });
+  antares.subscribeRenderer(({ action }) => {
+    console.log(`Rendering ${action.type}`)
+  })
 
-    loadedOnce = true;
-  }
-
-  const action = {
-    type: 'Some.type'
-  };
-  antares
-    .process(action)
-    .then(({ action }) => console.log(`Yay done processing ${action.type}` + '\n'));
-};
+  const actions = [
+    {
+      type: "Biz.speak",
+      payload: faker.company.catchPhrase()
+    },
+    {
+      type: "Biz.speak",
+      payload: faker.company.catchPhrase()
+    }
+  ]
+  actions.forEach(action => {
+    antares
+      .process(action)
+      .then(({ action }) => console.log(`Fully processed: ${action.payload}` + "\n"))
+  })
+}
