@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "antares-protocol": "antares-protocol",
+    "antares-protocol": "latest",
     "progress": "^2.0.0"
   },
   "devDependencies": {
