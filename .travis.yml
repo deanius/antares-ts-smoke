@@ -1,7 +1,9 @@
 language: node_js
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y festival festvox-kallpc16k
+addons:
+  apt:
+    packages:
+      - festival
+      - festvox-kallpc16k
 branches:
   only:
     - master
@@ -13,8 +15,8 @@ cache:
 notifications:
   email: false
 node_js:
-  - 9
-  - 8
+  - "9"
+  - "8"
 os:
   - linux
   - osx
