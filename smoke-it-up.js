@@ -1,5 +1,6 @@
 const faker = require("faker")
 const say = require("say")
+const ProgressBar = require("progress")
 
 module.exports = antares => {
   antares.subscribeRenderer(({ action }) => {
@@ -44,15 +45,14 @@ module.exports = antares => {
     }
   ]
 
-  // you wouldn't normally wait for each promise..
-  actions.reduce((lastActionPromise, action) => {
-    return lastActionPromise.then(() => {
-      return antares
-        .process(action)
-        .then(({ action }) =>
-          console.log(`Fully processed: ${action.payload}` + "\n")
-        )
-    })
-  }, Promise.resolve())
-  .then(() => console.log('Done!'))
+  const bar = new ProgressBar("[:bar]", { total: actions.length, width: Math.max(actions.length, 20), complete:'O' })
+
+  actions.forEach(action => {
+    bar.tick()
+    return antares
+      .process(action)
+      .then(({ action }) =>
+        console.log(`Fully processed: ${action.payload}` + "\n")
+      )
+  })
 }
