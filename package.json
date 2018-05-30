@@ -1,17 +1,20 @@
 {
-  "name": "antares-ts-smoke",
+  "name": "antares-smoke",
   "version": "1.0.0",
-  "description": "",
+  "description": "Smoke tests and utilities for Antares.",
   "main": "index.js",
   "scripts": {
-    "test": "node smoke-it-up-cjs"
+    "test": "node smoke-it-up-cjs",
+    "triggers:keypress": "node triggers/keypress.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "antares-protocol": "latest",
-    "progress": "^2.0.0"
+    "keypress": "^0.2.1",
+    "progress": "^2.0.0",
+    "rxjs": "^6.2.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
