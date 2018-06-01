@@ -4,7 +4,7 @@ readline.emitKeypressEvents(process.stdin)
 process.stdin.setRawMode(true)
 
 process.stdin.on("keypress", (str, key) => {
-  if (key.ctrl && key.name === "c") {
+  if (str === "x" || key.ctrl && key.name === "c") {
     process.exit()
   } else {
     console.log(`You pressed the "${str}" key`)
@@ -14,4 +14,4 @@ process.stdin.on("keypress", (str, key) => {
   }
 })
 
-console.log("Press any key...")
+console.log("Push some number keys! (0-9), x to eXit.")

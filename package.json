@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "node smoke-it-up-cjs",
-    "triggers:keypress": "node triggers/keypress.js"
+    "keypress:node": "node keypress/keypress_node.js",
+    "keypress:rx": "node keypress/keypress_rx.js"
   },
   "keywords": [],
   "author": "",
